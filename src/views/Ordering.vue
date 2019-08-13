@@ -9,7 +9,7 @@
             </el-alert>
             <el-form ref="form" :model="orderForm" label-width="180px">
                 <el-form-item label="吃饭人">
-                    <el-input v-model="orderForm.name" ></el-input>
+                    <el-input v-model="orderForm.name"></el-input>
                 </el-form-item>
                 <el-form-item label="吃啥🌚">
                     <el-radio-group v-model="orderForm.orderType">
@@ -50,6 +50,7 @@
 
 <script>
     import axios from 'axios';
+
     export default {
         name: "Ordering",
         data() {
@@ -96,8 +97,9 @@
                 return `${date.getFullYear()}${this.fix0(date.getMonth() + 1)}${this.fix0(date.getDate())}`;
             },
             onSubmit() {
-                confirm('大佬真的要吃(jia)饭(ban)吗？\n这不是演习，真的会提交订餐哦🌚\n');
-                confirm('此处报餐真实有效，是否确认提交？');
+                if (!confirm('大佬真的要吃(jia)饭(ban)吗？\n这不是演习，真的会提交订餐哦🌚\n') || !confirm('此处报餐真实有效，是否确认提交？')) {
+                    return;
+                }
                 let form = this.orderForm;
                 form.YYMMdd = this.date;
                 console.log(form);
