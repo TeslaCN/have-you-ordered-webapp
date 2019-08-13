@@ -1,9 +1,15 @@
 <template>
     <el-container>
         <el-main>
+            <el-alert
+                    title="报餐请注意"
+                    type="error"
+                    description="此处报餐真实有效！请谨慎提交！"
+                    show-icon>
+            </el-alert>
             <el-form ref="form" :model="orderForm" label-width="180px">
                 <el-form-item label="吃饭人">
-                    <el-input v-model="orderForm.name"></el-input>
+                    <el-input v-model="orderForm.name" ></el-input>
                 </el-form-item>
                 <el-form-item label="吃啥🌚">
                     <el-radio-group v-model="orderForm.orderType">
@@ -27,9 +33,14 @@
                 <el-form-item label="有啥想法？">
                     <el-input type="textarea" v-model="orderForm.suggestContent"></el-input>
                 </el-form-item>
-
+                <el-alert
+                        title="报餐请注意"
+                        type="error"
+                        description="此处报餐真实有效！请谨慎提交！"
+                        show-icon>
+                </el-alert>
                 <el-form-item>
-                    <el-button type="primary" @click="onSubmit">立即创建</el-button>
+                    <el-button type="primary" @click="onSubmit">立即报餐</el-button>
                     <el-button>取消</el-button>
                 </el-form-item>
             </el-form>
@@ -85,6 +96,8 @@
                 return `${date.getFullYear()}${this.fix0(date.getMonth() + 1)}${this.fix0(date.getDate())}`;
             },
             onSubmit() {
+                confirm('大佬真的要吃(jia)饭(ban)吗？\n这不是演习，真的会提交订餐哦🌚\n');
+                confirm('此处报餐真实有效，是否确认提交？');
                 let form = this.orderForm;
                 form.YYMMdd = this.date;
                 console.log(form);
