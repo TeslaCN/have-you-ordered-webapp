@@ -4,19 +4,24 @@
             stripe
             style="width: 100%">
         <el-table-column
+                type="index" width="50">
+        </el-table-column>
+        <el-table-column
                 prop="name"
                 label="吃饭人"
-                width="180"
+                width="100"
         >
         </el-table-column>
         <el-table-column
                 prop="orderType"
                 label="吃啥"
-                width="180">
+                width="150">
         </el-table-column>
         <el-table-column
                 prop="time"
-                label="点餐时间（次日吃饭）">
+                label="点餐时间（次日吃饭）"
+                width="400"
+        >
         </el-table-column>
         <el-table-column
                 prop="suggestContent"
