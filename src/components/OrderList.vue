@@ -52,15 +52,15 @@
         },
         methods: {
             fetch(date) {
+                if (!date) {
+                    return;
+                }
                 console.log(`Fetching: ${date}`);
                 axios.get(`/api/ordered/${date}`).then(response => {
                     let body = response.data;
                     this.orderList = body.data;
                 })
             },
-            fix0(s) {
-                return ('0' + s).slice(-2);
-            }
         },
         watch: {
             date() {
@@ -68,12 +68,7 @@
             }
         },
         mounted() {
-            let date = this.date;
-            if (date === '') {
-                let now = new Date();
-                date = `${now.getFullYear()}${this.fix0(now.getMonth() + 1)}${this.fix0(now.getDate())}`;
-            }
-            this.fetch(date);
+            this.fetch(this.date);
         }
     }
 </script>

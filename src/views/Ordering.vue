@@ -102,10 +102,12 @@
                 }
                 let form = this.orderForm;
                 form.YYMMdd = this.date;
+                form.suggestContent = `${form.suggestContent}. .      `;
                 console.log(form);
                 axios.post('/api/order', form).then(res => {
                     let body = res.data;
                     console.log(body);
+                    this.$router.push(`/ordered/${form.YYMMdd}`);
                 })
             }
         },

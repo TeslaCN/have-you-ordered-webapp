@@ -15,6 +15,10 @@ export default new Router({
       component: () => import('@/views/Ordering')
     },
     {
+      path: '/ordered/:date',
+      component: () => import('@/views/Ordered')
+    },
+    {
       path: '/ordered',
       component: () => import('@/views/Ordered')
     },
