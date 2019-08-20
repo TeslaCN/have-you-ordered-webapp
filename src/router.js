@@ -22,5 +22,9 @@ export default new Router({
       path: '/ordered',
       component: () => import('@/views/Ordered')
     },
+    {
+      path: '/version',
+      component: () => import('@/views/Version')
+    }
   ]
 })
