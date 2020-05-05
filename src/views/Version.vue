@@ -22,7 +22,7 @@
             return {
                 activities: [
                     {
-                        content: 'v0.0.5 ',
+                        content: 'v0.0.5 动态获取可选订餐类型',
                         timestamp: '2020-05-05',
                         size: 'large',
                         // type: 'primary',
@@ -31,8 +31,6 @@
                     }, {
                         content: 'v0.0.4 搜索建议',
                         timestamp: '2019-08-20',
-                        // type: 'primary',
-                        // icon: 'el-icon-success',
                     }, {
                         content: 'v0.0.3 报餐人列表索引；报餐确认',
                         timestamp: '2019-08-13',

@@ -1,33 +1,36 @@
 <template>
-    <el-table
-            :data="filteredList"
-            stripe
-            style="width: 100%">
-        <el-table-column
-                type="index" width="50">
-        </el-table-column>
-        <el-table-column
-                prop="name"
-                label="吃饭人"
-                width="100"
-        >
-        </el-table-column>
-        <el-table-column
-                prop="orderType"
-                label="吃啥"
-                width="150">
-        </el-table-column>
-        <el-table-column
-                prop="time"
-                label="点餐时间（次日吃饭）"
-                width="400"
-        >
-        </el-table-column>
-        <el-table-column
-                prop="suggestContent"
-                label="吃饭建议">
-        </el-table-column>
-    </el-table>
+    <div>
+        <el-alert v-if="orderList.length == 0" title="今天还没人点餐，可以试试选择昨天的日期！" type="warning" show-icon></el-alert>
+        <el-table
+                :data="filteredList"
+                stripe
+                style="width: 100%">
+            <el-table-column
+                    type="index" width="50">
+            </el-table-column>
+            <el-table-column
+                    prop="name"
+                    label="吃饭人"
+                    width="100"
+            >
+            </el-table-column>
+            <el-table-column
+                    prop="orderType"
+                    label="吃啥"
+                    width="150">
+            </el-table-column>
+            <el-table-column
+                    prop="time"
+                    label="点餐时间（次日吃饭）"
+                    width="400"
+            >
+            </el-table-column>
+            <el-table-column
+                    prop="suggestContent"
+                    label="吃饭建议">
+            </el-table-column>
+        </el-table>
+    </div>
 </template>
 
 <script>
