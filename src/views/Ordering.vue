@@ -79,7 +79,7 @@
                         }
                     }, {
                         text: '明天',
-                        onclick(picker) {
+                        onClick(picker) {
                             const date = new Date();
                             date.setTime(date.getTime() + 3600 * 1000 * 24);
                             picker.$emit('pick', date);
