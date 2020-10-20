@@ -3,6 +3,6 @@ module.exports = {
         disableHostCheck: true,
         host: '0.0.0.0',
         port: 18880,
-        proxy: 'https://yz.wwj.icu'
+        proxy: 'http://127.0.0.1:60001'
     }
 };
