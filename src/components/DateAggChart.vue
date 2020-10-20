@@ -1,20 +1,28 @@
 <template>
     <el-container>
-        <div id="date-agg-chart"></div>
+        <div id ="placeHold">
+            <transition name="fade">
+                <loading v-if="isLoading"></loading>
+            </transition>
+            <div id="date-agg-chart">
+            </div>
+        </div>
     </el-container>
 </template>
 
 <script>
     import echarts from 'echarts';
     import axios from 'axios';
-
+    import loading from '@/components/Loading';
     export default {
         name: "DateAggChart",
+        components:{loading},
         data() {
             return {
                 chart: null,
                 data: [],
                 xAxisData: [],
+                isLoading: true
             }
         },
         methods: {
@@ -24,6 +32,7 @@
                     this.xAxisData = body.map(o => o.key);
                     this.data = body.map(o => o.value);
                     this.setChart();
+                    this.isLoading = false
                 })
             },
             setChart() {
@@ -82,8 +91,9 @@
             }
         },
         mounted() {
-            this.chart = echarts.init(document.getElementById('date-agg-chart'));
-            this.fetchData();
+            const me = this;
+            me.chart = echarts.init(document.getElementById('date-agg-chart'));
+            me.fetchData();
         }
     }
 </script>
@@ -92,5 +102,17 @@
     #date-agg-chart {
         width: 100%;
         height: 600px;
+    }
+    #placeHold{
+        width: 100%;
+        height: 600px;
+    }
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.5s;
     }
 </style>
