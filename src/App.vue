@@ -9,7 +9,7 @@
             |
             <router-link to="/version">🌜版本信息🌛</router-link>
         </div>
-        <router-view/>
+         <router-view/>
     </div>
 </template>
 
@@ -37,5 +37,13 @@
                 color: #42b983;
             }
         }
+    }
+    .fade-enter,
+    .fade-leave-active {
+      opacity: 0;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.5s;
     }
 </style>
