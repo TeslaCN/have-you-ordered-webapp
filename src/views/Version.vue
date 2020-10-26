@@ -12,6 +12,17 @@
                 {{activity.content}}
             </el-timeline-item>
         </el-timeline>
+        <ul>
+            <li>
+                <a href="https://github.com/TeslaCN/have-you-ordered-webapp" target="_blank">前端 https://github.com/TeslaCN/have-you-ordered-webapp</a>
+            </li>
+            <li>
+                <a href="https://github.com/TeslaCN/have-you-ordered" target="_blank">后端 https://github.com/TeslaCN/have-you-ordered</a>
+            </li>
+            <li>
+                <a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备18011924号-1</a>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -22,12 +33,20 @@
             return {
                 activities: [
                     {
+                        content: 'v0.0.6 吃饭大王排行榜',
+                        timestamp: '2020-10-26',
+                        size: 'large',
+                        // type: 'primary',
+                        // icon: 'el-icon-success',
+                        color: 'green',
+                    },
+                    {
                         content: 'v0.0.5 动态获取可选订餐类型',
                         timestamp: '2020-05-05',
                         size: 'large',
                         // type: 'primary',
                         // icon: 'el-icon-success',
-                        color: 'green',
+                        //color: 'green',
                     }, {
                         content: 'v0.0.4 搜索建议',
                         timestamp: '2019-08-20',
