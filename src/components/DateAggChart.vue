@@ -1,9 +1,9 @@
 <template>
     <el-container>
         <div id ="placeHold">
-            <transition name="fade">
+            <!--<transition name="fade">
                 <loading v-if="isLoading"></loading>
-            </transition>
+            </transition>-->
             <div id="date-agg-chart">
             </div>
         </div>
@@ -87,13 +87,12 @@
                         return idx * 5;
                     }
                 };
-                this.chart.setOption(option);
+                this.chart.setOption(option)
             }
         },
         mounted() {
-            const me = this;
-            me.chart = echarts.init(document.getElementById('date-agg-chart'));
-            me.fetchData();
+            this.chart = echarts.init(document.getElementById('date-agg-chart'));
+            this.fetchData()
         }
     }
 </script>

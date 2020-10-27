@@ -22,13 +22,12 @@
                 axios.get('/api/dashboard/agg-order-person').then(res => {
                     let body = res.data;
                      this.xAxisData = body.map(o => o.key);
-                    // for (let i = 0; i < 20; i++) {//展示前20名
-                    //     this.xAxisData.push(body[i].key);
-                    //     this.data.push(body[i].value);
-                    // }
                      this.data = body.map(o => o.value);
+                  // for (let i = 0; i < 20; i++) {//展示前20名
+                  //     this.xAxisData.push(body[i].key);
+                  //     this.data.push(body[i].value);
+                  // }
                     this.setChart();
-                    console.log("fetchData()已执行")
                 })
             },
             setChart() {
@@ -60,8 +59,7 @@
                     yAxis: {
                         inverse: true,
                         type: 'category',
-                        data: this.xAxisData,
-                        //interval:100
+                        data: this.xAxisData
                     },
                     series: [
                         {
@@ -93,15 +91,12 @@
                         }
                     ]
             };
-            this.chart.setOption(option);
-            console.log("setChart()已执行")
+            this.chart.setOption(option)
         }
     },
         mounted() {
-            console.log("mounted()已执行1");
             this.chart = echarts.init(document.getElementById('order-most-chart'));
             this.fetchData();
-            console.log("mounted()已执行2")
         }
     }
 </script>
@@ -110,6 +105,5 @@
     #order-most-chart {
         width: 100%;
         height: 6100px;
-
     }
 </style>
