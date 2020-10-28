@@ -5,7 +5,9 @@
             |
             <router-link to="/ordered">点餐了？🌝</router-link>
             |
-            <router-link to="/ordering">现在点（不受时间限制，小心查水表🌚）</router-link>
+            <router-link to="/ordering">现在点🌚</router-link>
+            |
+            <router-link to="/orderMost">吃饭大王🌝</router-link>
             |
             <router-link to="/version">🌜版本信息🌛</router-link>
         </div>
@@ -38,6 +40,7 @@
             }
         }
     }
+
     .fade-enter,
     .fade-leave-active {
       opacity: 0;
