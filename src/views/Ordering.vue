@@ -13,10 +13,6 @@
                 </el-form-item>
                 <el-form-item label="吃啥🌚">
                     <el-radio-group v-model="orderForm.orderType" @change="onOrderTypeSelect">
-                        <!--                        <el-radio label="套餐饭">套餐饭（工作日）</el-radio>-->
-                        <!--                        <el-radio label="中餐和晚餐">中餐和晚餐（周末）</el-radio>-->
-                        <!--                        <el-radio label="中餐">中餐（周末）</el-radio>-->
-                        <!--                        <el-radio label="晚餐">晚餐（周末）</el-radio>-->
                         <el-radio v-for="orderType in orderTypes" border :key="orderType._id" :label="orderType.value"
                                   :size="orderType.openStatus ? 'medium':'mini'">{{orderType.value}}
                         </el-radio>
